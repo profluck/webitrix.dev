@@ -26,6 +26,8 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 <div id="panel">
     <?$APPLICATION->ShowPanel();?>
 </div>
+<?php if (ERROR_404 != 'Y'): ?>
 <div class="wrapper">
+<?php endif; ?>
 	
 						
