@@ -26,8 +26,61 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 <div id="panel">
     <?$APPLICATION->ShowPanel();?>
 </div>
-<?php if (ERROR_404 != 'Y'): ?>
+<?php if (!defined('ERROR_404')): ?>
 <div class="wrapper">
+    <div class="sidebar-wrapper">
+        <div class="profile-container">
+            <? $APPLICATION->IncludeComponent("bitrix:main.include", ".default", [
+                "AREA_FILE_SHOW" => "file",
+                "AREA_FILE_SUFFIX" => "inc",
+                "AREA_FILE_RECURSIVE" => "N",
+                "EDIT_TEMPLATE" => "",
+                "COMPONENT_TEMPLATE" => ".default",
+                "PATH" => "/page_includes/profile_section_inc.php"
+            ]) ?>
+        </div>
+        <div class="contact-container container-block">
+            <ul class="list-unstyled contact-list">
+                <li class="email"><i class="fa fa-envelope"></i><a href="mailto: yourname@email.com">alan.doe@website.com</a></li>
+                <li class="phone"><i class="fa fa-phone"></i><a href="tel:0123 456 789">0123 456 789</a></li>
+                <li class="website"><i class="fa fa-globe"></i><a href="http://themes.3rdwavemedia.com/website-templates/free-responsive-website-template-for-developers/" target="_blank">portfoliosite.com</a></li>
+                <li class="linkedin"><i class="fa fa-linkedin"></i><a href="#" target="_blank">linkedin.com/in/alandoe</a></li>
+                <li class="github"><i class="fa fa-github"></i><a href="#" target="_blank">github.com/username</a></li>
+                <li class="twitter"><i class="fa fa-twitter"></i><a href="https://twitter.com/3rdwave_themes" target="_blank">@twittername</a></li>
+            </ul>
+        </div>
+        <div class="education-container container-block">
+            <h2 class="container-block-title">Education</h2>
+            <? $APPLICATION->IncludeComponent("bitrix:main.include", "", [
+                "AREA_FILE_SHOW" => "file",
+                "AREA_FILE_SUFFIX" => "inc",
+                "AREA_FILE_RECURSIVE" => "N",
+                "EDIT_TEMPLATE" => "",
+                "PATH" => "/page_includes/education_section_inc.php"
+            ]) ?>
+        </div>
+        <div class="languages-container container-block">
+            <h2 class="container-block-title">Languages</h2>
+            <? $APPLICATION->IncludeComponent("bitrix:main.include", "", [
+                "AREA_FILE_SHOW" => "file",
+                "AREA_FILE_SUFFIX" => "inc",
+                "AREA_FILE_RECURSIVE" => "N",
+                "EDIT_TEMPLATE" => "",
+                "PATH" => "/page_includes/languages_section_inc.php"
+            ]) ?>
+        </div>
+        <div class="interests-container container-block">
+            <h2 class="container-block-title">Interests</h2>
+            <? $APPLICATION->IncludeComponent("bitrix:main.include", "", [
+                "AREA_FILE_SHOW" => "file",
+                "AREA_FILE_SUFFIX" => "inc",
+                "AREA_FILE_RECURSIVE" => "N",
+                "EDIT_TEMPLATE" => "",
+                "PATH" => "/page_includes/interests_section_inc.php"
+            ]) ?>
+        </div>
+    </div>
+    <div class="main-wrapper">
 <?php endif; ?>
 	
 						

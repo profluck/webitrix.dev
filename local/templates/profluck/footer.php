@@ -2,7 +2,8 @@
 if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 	die();
 ?>
-<?php if (ERROR_404 != 'Y'): ?>
+<?php if (!defined('ERROR_404')): ?>
+    </div><!--sidebar-wrapper-->
 </div><!--//wrapper-->
 <footer class="footer">
     <div class="text-center">
