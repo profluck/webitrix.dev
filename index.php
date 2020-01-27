@@ -54,7 +54,7 @@ $APPLICATION->SetTitle('Главная');
         "PAGER_SHOW_ALL" => "N",	// Показывать ссылку "Все"
         "PAGER_SHOW_ALWAYS" => "N",	// Выводить всегда
         "PAGER_TEMPLATE" => "",	// Шаблон постраничной навигации
-        "PAGER_TITLE" => "Новости",	// Название категорий
+        "PAGER_TITLE" => "",	// Название категорий
         "PARENT_SECTION" => "",	// ID раздела
         "PARENT_SECTION_CODE" => "",	// Код раздела
         "PREVIEW_TRUNCATE_LEN" => "",	// Максимальная длина анонса для вывода (только для типа текст)
@@ -87,22 +87,72 @@ $APPLICATION->SetTitle('Главная');
     <div class="intro">
         <p>You can list your side projects or open source libraries in this section. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et ligula in nunc bibendum fringilla a eu lectus.</p>
     </div>
-    <div class="item">
-        <span class="project-title"><a href="#hook">Velocity</a></span> - <span class="project-tagline">A responsive website template designed to help startups promote, market and sell their products.</span>
-    </div>
-    <div class="item">
-        <span class="project-title"><a href="http://themes.3rdwavemedia.com/website-templates/responsive-bootstrap-theme-web-development-agencies-devstudio/" target="_blank">DevStudio</a></span> -
-        <span class="project-tagline">A responsive website template designed to help web developers/designers market their services. </span>
-    </div>
-    <div class="item">
-        <span class="project-title"><a href="http://themes.3rdwavemedia.com/website-templates/responsive-bootstrap-theme-for-startups-tempo/" target="_blank">Tempo</a></span> - <span class="project-tagline">A responsive website template designed to help startups promote their products or services and to attract users &amp; investors</span>
-    </div>
-    <div class="item">
-        <span class="project-title"><a href="hhttp://themes.3rdwavemedia.com/website-templates/responsive-bootstrap-theme-mobile-apps-atom/" target="_blank">Atom</a></span> - <span class="project-tagline">A comprehensive website template solution for startups/developers to market their mobile apps. </span>
-    </div>
-    <div class="item">
-        <span class="project-title"><a href="http://themes.3rdwavemedia.com/website-templates/responsive-bootstrap-theme-for-mobile-apps-delta/" target="_blank">Delta</a></span> - <span class="project-tagline">A responsive Bootstrap one page theme designed to help app developers promote their mobile apps</span>
-    </div>
+    <?$APPLICATION->IncludeComponent(
+        "bitrix:news.list",
+        "projects_block",
+        array(
+            "ACTIVE_DATE_FORMAT" => "d.m.Y",
+            "ADD_SECTIONS_CHAIN" => "N",
+            "AJAX_MODE" => "N",
+            "AJAX_OPTION_ADDITIONAL" => "",
+            "AJAX_OPTION_HISTORY" => "N",
+            "AJAX_OPTION_JUMP" => "N",
+            "AJAX_OPTION_STYLE" => "N",
+            "CACHE_FILTER" => "N",
+            "CACHE_GROUPS" => "N",
+            "CACHE_TIME" => "36000000",
+            "CACHE_TYPE" => "N",
+            "CHECK_DATES" => "Y",
+            "DETAIL_URL" => "",
+            "DISPLAY_BOTTOM_PAGER" => "N",
+            "DISPLAY_DATE" => "N",
+            "DISPLAY_NAME" => "N",
+            "DISPLAY_PICTURE" => "N",
+            "DISPLAY_PREVIEW_TEXT" => "N",
+            "DISPLAY_TOP_PAGER" => "N",
+            "FIELD_CODE" => array(
+                0 => "NAME",
+                1 => "PREVIEW_TEXT",
+                2 => "",
+            ),
+            "FILTER_NAME" => "",
+            "HIDE_LINK_WHEN_NO_DETAIL" => "N",
+            "IBLOCK_ID" => "2",
+            "IBLOCK_TYPE" => "content",
+            "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+            "INCLUDE_SUBSECTIONS" => "N",
+            "MESSAGE_404" => "",
+            "NEWS_COUNT" => "20",
+            "PAGER_BASE_LINK_ENABLE" => "N",
+            "PAGER_DESC_NUMBERING" => "N",
+            "PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+            "PAGER_SHOW_ALL" => "N",
+            "PAGER_SHOW_ALWAYS" => "N",
+            "PAGER_TEMPLATE" => "",
+            "PAGER_TITLE" => "",
+            "PARENT_SECTION" => "",
+            "PARENT_SECTION_CODE" => "",
+            "PREVIEW_TRUNCATE_LEN" => "",
+            "PROPERTY_CODE" => array(
+                0 => "PROJECT_LINK",
+                1 => "",
+            ),
+            "SET_BROWSER_TITLE" => "N",
+            "SET_LAST_MODIFIED" => "N",
+            "SET_META_DESCRIPTION" => "N",
+            "SET_META_KEYWORDS" => "N",
+            "SET_STATUS_404" => "N",
+            "SET_TITLE" => "N",
+            "SHOW_404" => "N",
+            "SORT_BY1" => "SORT",
+            "SORT_BY2" => "",
+            "SORT_ORDER1" => "ASC",
+            "SORT_ORDER2" => "",
+            "STRICT_SECTION_CHECK" => "N",
+            "COMPONENT_TEMPLATE" => "projects_block"
+        ),
+        false
+    );?>
 </section>
 <section class="skills-section section">
     <h2 class="section-title"><i class="fa fa-rocket"></i>Skills &amp; Proficiency</h2>
