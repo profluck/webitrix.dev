@@ -40,14 +40,20 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
             ]) ?>
         </div>
         <div class="contact-container container-block">
-            <ul class="list-unstyled contact-list">
-                <li class="email"><i class="fa fa-envelope"></i><a href="mailto: yourname@email.com">alan.doe@website.com</a></li>
-                <li class="phone"><i class="fa fa-phone"></i><a href="tel:0123 456 789">0123 456 789</a></li>
-                <li class="website"><i class="fa fa-globe"></i><a href="http://themes.3rdwavemedia.com/website-templates/free-responsive-website-template-for-developers/" target="_blank">portfoliosite.com</a></li>
-                <li class="linkedin"><i class="fa fa-linkedin"></i><a href="#" target="_blank">linkedin.com/in/alandoe</a></li>
-                <li class="github"><i class="fa fa-github"></i><a href="#" target="_blank">github.com/username</a></li>
-                <li class="twitter"><i class="fa fa-twitter"></i><a href="https://twitter.com/3rdwave_themes" target="_blank">@twittername</a></li>
-            </ul>
+            <? $APPLICATION->IncludeComponent("bitrix:menu", "right_menu", [
+                    "ALLOW_MULTI_SELECT" => "N",
+                    "CHILD_MENU_TYPE" => "left",
+                    "DELAY" => "N",
+                    "MAX_LEVEL" => "1",
+                    "MENU_CACHE_GET_VARS" => [],
+                    "MENU_CACHE_TIME" => "3600",
+                    "MENU_CACHE_TYPE" => "N",
+                    "MENU_CACHE_USE_GROUPS" => "N",
+                    "ROOT_MENU_TYPE" => "right",
+                    "USE_EXT" => "N",
+                    "COMPONENT_TEMPLATE" => "right_menu"
+                ], false
+            ) ?>
         </div>
         <div class="education-container container-block">
             <h2 class="container-block-title">Education</h2>
